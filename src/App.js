@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css'
+
+import Header from './components/Header'
+import GridHeader from './components/GridHeader'
+import Journey from './components/Journey'
+
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      journeys: []
+    }
+  }
+
+  componentDidMount() {
+    
+    fetch("https://60ddaca0878c890017fa2a90.mockapi.io/api/v1/routes")
+    .then(response => response.json())
+    .then((response) => {
+      // console.log(response.data);
+      this.setState({
+        journeys: response
+      })
+
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+    
+  }
+
+  render() {
+    let counter = 1;
+    const journeysComponents = this.state.journeys.map((journey) => {
+      return <Journey 
+        key={journey.id}
+        counter={counter++}
+        journey={journey}
+      />
+    })
+    return (
+      <div>
+        <Header />
+        <div class="container">
+        <GridHeader />
+        {journeysComponents}
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;

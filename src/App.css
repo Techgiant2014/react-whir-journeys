@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+p {
+  font-size: 12 !important;
+}
+
+.flex-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  align-items: center;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.flex-container .col {
+  flex: 1;
+  flex-basis: 50px;
+}
+
+.hidden-title {
+  display: none;
+}
+
+footer {
+  background-color: darkslategray;
   color: white;
+  height: 50px;
+  flex-shrink: 0;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  font-size: 12px !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#gridHeader {
+  font-size: 14px;
+}
+
+#Journey {
+  font-size: 14px;
+}
+
+/* Helper classes */
+
+.bold {
+  font-weight: bold;
+}
+
+/* Media Queries */
+
+/* Tablets */
+@media screen and (min-width:481px) and (max-width: 768px) {
+  #gridHeader {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .counter {
+    display: none;
+  }
+
+  .hidden-title {
+    display: inline-block;
+  }
+
+  button {
+    font-size: 14px !important;
+  }
+}
+
+
+/* Phones */
+@media screen and (max-width:480px) {
+  #gridHeader {
+    display: none;
+  }
+
+  .counter {
+    display: none;
+  }
+
+  .hidden-title {
+    display: inline-block;
+  }
+
+  button {
+    font-size: 14px !important;
+  }
+
+  .footer {
+    margin-top: 150px;
+    padding: 150px;
   }
 }

@@ -1,0 +1,29 @@
+[
+    {
+        "id": 20,
+        "date": "2021-06-30",
+        "start": "Ntinda, Kampala",
+        "end": "Kyengera, Uganda",
+        "travelAs": "passenger",
+        "seats": 1,
+        "seatsLeft": 1
+    },
+    {
+        "id": 21,
+        "date": "2021-07-02",
+        "start": "Kampala, Uganda",
+        "end": "Jinja, Uganda",
+        "travelAs": "driver",
+        "seats": 2,
+        "seatsLeft": 2
+    },
+    {
+        "id": 22,
+        "date": "2021-07-09",
+        "start": "Kampala, Uganda",
+        "end": "Entebbe, Uganda",
+        "travelAs": "passenger",
+        "seats": 1,
+        "seatsLeft": 1
+    }
+]
