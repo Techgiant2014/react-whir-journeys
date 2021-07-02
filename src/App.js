@@ -43,7 +43,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <div class="container">
+        <div className="container">
         <GridHeader />
         {journeysComponents}
         </div>
